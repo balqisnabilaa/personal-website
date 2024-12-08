@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+	<!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+	
+	
+	/*navbar style*/
+		
+		nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    background-color: #301934;
+    padding: 15px 0; 
+    z-index: 2; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+nav ul {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px; 
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px; 
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #CA5CDD;
+    background-color: #47264f;
+    border-radius: 5px;
+}
+
+		
+        /* Reset default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+			padding-top: 120px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 940px;
+            width: 150%;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+			margin-top: 140px;
+        }
+
+		
+        /* Sidebar for profile */
+        .sidebar {
+            background-color: #856088;
+            color: white;
+            width: 30%;
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #ffffff;
+        }
+
+        .name {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 1.1em;
+            color: #b2dfdb;
+            margin-bottom: 20px;
+        }
+
+        /* Main content area */
+        .content {
+            padding: 40px;
+            width: 70%;
+        }
+
+        .about,
+        .biodata {
+            margin-bottom: 7px;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            color: #9E7BB5;
+            margin-bottom: 10px;
+            border-bottom: 5px solid #b2dfdb;
+            padding-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .biodata ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .biodata li {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #00796b;
+        }
+		
+		/* Center the content */
+        html, body {
+            display: grid;
+            place-items: center;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Basic button styling */
+        .button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+            transition: width 0.5s;
+            color: #FFFFFF;
+            margin: 5px;
+			background-color: #D8BFD8;
+			opacity: 0.5;
+        }
+
+        /* Expand width on hover */
+        .button:hover {
+            width: 100px;
+        }
+
+        /* Icon hover colors */
+        .button:nth-child(1):hover i {
+            color: #524F81;
+        }
+        .button:nth-child(2):hover i {
+            color: #E1306C;
+        }
+        .button:nth-child(3):hover i {
+            color: #0077B5;
+        }
+		
+.wrapper{
+
+	display: flex;
+    justify-content: center; 
+    margin-top: 180px;
+}
+
+/* Playlist container styling */
+.playlist {
+    margin: 40px auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+/* Card container for grid layout */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+}
+
+/* Card styling */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+	margin-bottom: 20px;
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Album cover styling */
+.album-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Audio player styling */
+audio {
+    width: 100%; 
+    margin-top: 10px;
+}
+
+/* Favorites Section */
+.favorites {
+    margin: 40px auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+.favorites h2 {
+    font-size: 1.6em;
+    color: #9E7BB5;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #b2dfdb;
+    padding-bottom: 10px;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+	margin-bottom: 30px;
+}
+
+.grid-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Fixed width for items */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.cover {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+
+
+    </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+    <nav>
+        <ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="aboutme.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html">Experience</a></li>
+			<li><a href="gallery.html">My Gallery</a></li>
+            <li><a href="goal.html">My Future Goals</a></li>
+
+        </ul>
+    </nav>
+</div>
+<br>
+<br>
+<br>
+<!-- Background Image -->
+    <img src="images/purplepic.jpeg" alt="Background" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.7;">
+    <div class="container">
+	
+
+        <!-- Sidebar -->
+		
+        <div class="sidebar">
+            <img src="images/profilepic.jpg" alt="Profile Picture" class="profile-pic">
+            <h1 class="name">Balqis Nabila</h1>
+            <p class="title">ENFJ</p>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content">
+            <div class="about">
+                <h2>About Me</h2>
+                <p> Hi! I was born on 29th April 2004 and my gender is female. I live in Cheras, Selangor. I am the eldest daughter of 4 siblings. My favourite colors are blue and black. My hobbies are reading 
+			and listening to the music. Besides, I also enjoy watching anime and any movies except horror.</p>
+            <br>
+			</div>
+
+            <div class="education">
+                <h2>Education Journey</h2>
+                <ul>
+                    <li><strong>2009-2010:</strong> Pra Sekolah Bukit Raya</li>
+					<br>
+                    <li><strong>2011-2016:</strong> Sekolah Kebangsaan Bukit Raya</li>
+					<br>
+                    <li><strong>2017-2022:</strong> SMA Persekutuan Kajang</li>
+					<br>
+                    <li><strong>2022-2025:</strong> UiTM Rembau</li>
+                </ul>
+            </div>
+        </div>
+	
+    </div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="wrapper">
+    <div class="button">
+        <a href= "https://x.com/blqsnabilaa?s=21&t=xu4rOf-ApHL2zVsamCAUmQ" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+    </div>
+    <div class="button">
+        <a href="https://www.instagram.com/blqisnabilaa/profilecard/?igsh=cXB6c2o5MHVpc3dh" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <div class="button">
+        <a href="https://www.linkedin.com/in/balqis-nabila-792366307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+</div>
+	
+	
+	<div class="playlist">
+    <h2>My Favorite Playlist</h2>
+    <div class="card-container">
+        <!-- Song 1 -->
+        <div class="card">
+            <img src="images/album 1.jpeg" alt="Album Cover" class="album-cover">
+            <p><strong>Title:</strong> One of the Girls - The Weeknd</p>
+            <audio controls>
+                <source src="images/The Weeknd, JENNIE, Lily-Rose Depp - One Of The Girls (Lyrics).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Song 2 -->
+        <div class="card">
+            <img src="images/album cover.jpeg" alt="Album Cover" class="album-cover">
+            <p><strong>Title:</strong> Ku Ingin Pisah - Nabila Taqiyyah</p>
+            <audio controls>
+                <source src="images/Nabila Taqiyyah - Ku Ingin Pisah (Official Lyric Video).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Song 3 -->
+        <div class="card">
+            <img src="images/album 3.jpg" alt="Album Cover" class="album-cover">
+            <p><strong>Title:</strong> Reminisensi - Insomniacks</p>
+            <audio controls>
+                <source src="images/Insomniacks - Reminisensi (Lirik Video).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</div>
+
+<div class="favorites">
+    <h2>My Favorite Shows</h2>
+    <div class="grid-container">
+        <!-- Anime 1 -->
+        <div class="grid-item">
+            <img src="images/anime 1.webp" alt="Anime 1 Cover" class="cover">
+            <p><strong>Title:</strong> Windbreaker</p>
+            <p><strong>Genre:</strong> Action, Adventure, Martial Arts</p>
+        </div>
+
+        <!-- Anime 2 -->
+        <div class="grid-item">
+            <img src= "images/black butler.jpg" alt="Anime 2 Cover" class="cover">
+            <p><strong>Title:</strong> Black Butler</p>
+            <p><strong>Genre:</strong> Sci-Fi, Fantasy, Mystery, Thriller</p>
+        </div>
+
+        <!-- Anime 3 -->
+        <div class="grid-item">
+            <img src= "images/seraphoftheend.jpg" alt="Movie 1 Cover" class="cover">
+            <p><strong>Title:</strong> Seraph of the End</p>
+            <p><strong>Genre:</strong> Sci-Fi, Fantasy, Family, Action</p>
+        </div>
+
+        <!-- Movie 1 -->
+        <div class="grid-item">
+            <img src="images/lahad datu.jpeg"alt="Movie 1 Cover" class="cover">
+            <p><strong>Title:</strong> Takhluk: Lahad Datu</p>
+            <p><strong>Genre:</strong> Action, War</p>
+        </div>
+		
+		 <!-- Movie 2 -->
+        <div class="grid-item">
+            <img src="images/garfield.jpg" alt="Movie 2 Cover" class="cover">
+            <p><strong>Title:</strong> Garfield </p>
+            <p><strong>Genre:</strong> Fantasy, Adventure, Comedy</p>
+        </div>
+		
+		 <!-- Movie 3 -->
+        <div class="grid-item">
+            <img src="images/detective conan.jpg" alt="Movie 3 Cover" class="cover">
+            <p><strong>Title:</strong> Detective Conan </p>
+            <p><strong>Genre:</strong> Action, Mystery, Crime, Drama</p>
+        </div>
+    </div>
+</div>
+
+<footer style="background-color: #301934; color: white; text-align: center; padding: 13px; width: 150%;">
+  <p>&copy; 2024 BalqisNabila's. All rights reserved.</p>
+  
+</footer>
+</body>
+</html>

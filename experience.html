@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Experience</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!-- Link to external CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">rel="stylesheet"> 
+ </head>
+ 
+ <style>
+ 
+ body {
+  font-family: Georgia, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f4f4f9;
+  padding-top: 5px;
+  font-size: 20px;
+  
+}
+ /*navbar style*/
+		
+		nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    background-color: #301934;
+    padding: 15px 0; 
+    z-index: 2; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+nav ul {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px; 
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #CA5CDD;
+    background-color: #47264f;
+    border-radius: 5px;
+}
+
+
+ header {
+  text-align: center;
+  padding: 1rem;
+  background-color: transparent;
+  color: #301934;
+  margin-top: 40px;
+  margin-bottom: 20px;
+ 
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #301934;
+}
+
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+
+.mySlides {display:none;}
+
+
+}
+
+
+</style>
+ 
+ <body>
+ 
+ <!-- Navigation Bar -->
+    <nav>
+        <ul>
+			<li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience.html">Experience</a></li>
+			<li><a href="gallery.html">My Gallery</a></li>
+            <li><a href="goal.html">My Future Goals</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Background Image -->
+    <img src="images/purple bg.jpg" alt="Background" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.7;">
+ 
+ <!-- header -->
+<header>
+<br>
+<div class="w3-container w3-center w3-card w3-deep-purple w3-padding-32" style="margin: 20px auto; max-width: 800px; border-radius: 8px; opacity: 0.9;">
+        <h1 class="w3-text-white"><b>My Internship Experience</b></h1>
+		<p style= "color: white; " >
+		<marquee> My duration of internship was 2 months, and I was working at Hospital Canselor Tuanku Muhriz under Unit Kesihatan Awam. </marquee></p>
+    </p>
+	</div>
+ 
+ </header>
+ 
+ <!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+
+	<!-- Photo grid -->
+  <div class="w3-row w3-grayscale-min">
+    <div class="w3-quarter">
+      <img src="assets/intern 1.jpg" style="width:100%" onclick="onClick(this)">
+      <img src= "assets/intern 2.jpg" style="width:100%" onclick="onClick(this)" >
+      
+   </div>
+    
+   <div class="w3-quarter">
+      <img src="assets/intern 4.jpg" style="width:100%" onclick="onClick(this)" >
+      <img src="assets/intern 5.jpg" style="width:100%" onclick="onClick(this)" >
+      
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="assets/intern 8.jpg" style="width:100%" onclick="onClick(this)" >
+      <img src="images/gambar 4.jpg" style="width:100%" onclick="onClick(this)" >
+     
+    </div>
+
+    <div class="w3-quarter">
+      <img src="images/internship.jpg" style="width:100%" onclick="onClick(this)">
+      <img src="assets/intern 14.jpg" style="width:100%" onclick="onClick(this)">
+      
+    </div>
+  </div>
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+  
+  <script>
+  
+function onClick (element) {
+	document.getElementById("img01").src= element.src;
+	document.getElementById("caption").src=innerHTML= element.alt;
+	document.getElementById("modal01").style.display= "block";
+	}
+  function closeModal (event) {
+    if (event.target.id === "modal01") {
+		document.getElementById ("modal01").style.display = "none";
+		}
+	}
+
+</script>
+ 
+ 
+ <div class="w3-container" style="text-align: center">
+ <br>
+ <br>
+  <h2><b>GREAT MEMORIES DURING INTERNSHIP</b></h2> 
+  <p>This slideshows plays some important events that I will always remember </p>
+</div>
+
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides w3-animate-top" src="images/li1.jpg" style="width:100%">
+  <img class="mySlides w3-animate-bottom" src="images/li2.jpg" style="width:100%">
+  <img class="mySlides w3-animate-top" src="images/li3.jpg" style="width:100%">
+  <img class="mySlides w3-animate-bottom" src="images/li4.jpg" style="width:100%">
+</div>
+<br>
+<br>
+<br>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2500);    
+}
+</script>
+
+<footer style="background-color: #301934; color: white; text-align: center; padding: 10px 0; width: 100%; position: fixed; bottom: 0; left: 0; font-size: 14px; box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);">
+    <p>&copy; 2024 BalqisNabila's. All rights reserved.</p>
+</footer>
+  </body>
+  </html>
